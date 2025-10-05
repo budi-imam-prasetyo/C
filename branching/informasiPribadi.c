@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Latihan 1: Membuat program sederhana untuk menampilkan informasi pribadi dan ukuran memori variabel
 
 #include <stdio.h>
 #include <string.h>

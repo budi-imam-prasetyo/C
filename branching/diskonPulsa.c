@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Tugas 4: Membuat program pulsa dengan diskon 20% dan menampilkan paket yang bisa dibeli
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Tugas 1: Membuat program sederhana untuk menghitung total harga barang dan ukuran memori variabel harga barang
 
 #include <stdio.h>
 

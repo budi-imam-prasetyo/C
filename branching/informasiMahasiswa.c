@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Latihan 3: Membuat program sederhana untuk menampilkan informasi mahasiswa dan menentukan kelulusan berdasarkan rata-rata nilai
 
 #include <stdio.h>
 #include <stdbool.h>

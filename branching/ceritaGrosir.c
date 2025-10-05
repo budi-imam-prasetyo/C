@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Tugas 5: Membuat program grosir sederhana dengan interaksi pelanggan
 
 #include <stdio.h>
 #include <unistd.h>

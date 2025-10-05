@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Tugas 3: Membuat program sederhana untuk menghitung total gaji bulanan dengan bonus mingguan dan ukuran memori variabel gaji bulanan, bonus mingguan, total bonus, dan total gaji
 
 #include <stdio.h>
 

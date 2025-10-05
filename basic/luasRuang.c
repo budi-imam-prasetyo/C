@@ -1,4 +1,5 @@
 //! Pak Vito
+//* Tugas 2: Membuat program sederhana untuk menghitung luas ruangan dan ukuran memori variabel panjang, lebar, dan luas ruangan
 
 #include <stdio.h>
 
