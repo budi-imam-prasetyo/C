@@ -1,2 +1,9 @@
+*
+!*/
+!**/*.c
+!README.md
+!.gitignore
+!index.md
+!_config.yml
 Afolder/
 .vscode/
