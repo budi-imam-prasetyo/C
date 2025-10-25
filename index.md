@@ -90,9 +90,9 @@ gcc 01-Dasar-Dasar/hello-world.c -o hello
 - [x] Variabel dan tipe data
 - [x] Operator dan ekspresi
 - [x] Kontrol alur (if-else, switch, loops)
-- [ ] Fungsi dan parameter
-- [ ] Array dan string
-- [ ] Pointer dan memory management
+- [x] Fungsi dan parameter
+- [x] Array dan string
+- [x] Pointer dan memory management
 - [ ] Struktur data (struct, union, enum)
 - [ ] File I/O operations
 - [ ] Preprocessing directives
