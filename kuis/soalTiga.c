@@ -1,30 +1,42 @@
 #include <stdio.h>
 
-float HitungTotal(float array[], int n) {
-    float total = 0.0f;
+void HitungTotal(float array[], int n, float *total) {
+    float t = 0.0f;
     for (int i = 0; i < n; i++)
-        total += array[i];
-    return total;
+        t += array[i];
+    if (total) *total = t;
 }
 
-float HitungRataRata(float array[], int n) {
-    return HitungTotal(array, n) / n;
+void HitungRataRata(float array[], int n, float *rata) {
+    float t = 0.0f;
+    HitungTotal(array, n, &t);
+    if (rata && n > 0) *rata = t / n;
 }
 
-int CariMaksimum(float array[], int n, float *max) {
+void CariMaksimum(float array[], int n, int *hariIndex, float *max) {
+    if (n <= 0) {
+        if (hariIndex) *hariIndex = 0;
+        if (max) *max = 0.0f;
+        return;
+    }
     int first = 0;
     for (int i = 1; i < n; i++)
         if (array[i] > array[first]) first = i;
+    if (hariIndex) *hariIndex = first + 1;
     if (max) *max = array[first];
-    return first + 1;
 }
 
-int CariMinimum(float array[], int n, float *min) {
+void CariMinimum(float array[], int n, int *hariIndex, float *min) {
+    if (n <= 0) {
+        if (hariIndex) *hariIndex = 0;
+        if (min) *min = 0.0f;
+        return;
+    }
     int first = 0;
     for (int i = 1; i < n; i++)
         if (array[i] < array[first]) first = i;
+    if (hariIndex) *hariIndex = first + 1;
     if (min) *min = array[first];
-    return first + 1;
 }
 
 int main() {
@@ -41,11 +53,12 @@ int main() {
   }
   printf("=======================================================\n");
 
-  float total = HitungTotal(pendapatan, n);
-  float rata = HitungRataRata(pendapatan, n);
-  float max, min;
-  int hariMax = CariMaksimum(pendapatan, n, &max);
-  int hariMin = CariMinimum(pendapatan, n, &min);
+  float total = 0.0f, rata = 0.0f, max = 0.0f, min = 0.0f;
+  int hariMax = 0, hariMin = 0;
+  HitungTotal(pendapatan, n, &total);
+  HitungRataRata(pendapatan, n, &rata);
+  CariMaksimum(pendapatan, n, &hariMax, &max);
+  CariMinimum(pendapatan, n, &hariMin, &min);
 
   printf("|| Total Pendapatan Mingguan = %.0f\n", total);
   printf("|| Rata-rata Pendapatan = %.2f\n", rata);

@@ -1,20 +1,35 @@
 #include <stdio.h>
 
-float hitung_tarif(float km);
-float hitung_diskon(float tarif);
+void hitung_tarif(float km, float *tarif) {
+  if (km <= 5)
+    *tarif = 5000 * km;
+  else if (km > 5 && km <= 10)
+    *tarif = 25000 + (4000 * (km - 5));
+  else
+    *tarif = 45000 + (3000 * (km - 10));
+}
+
+void hitung_diskon(float tarif, float *diskon) {
+  if (tarif > 100000)
+    *diskon = 0.10f;
+  else if (tarif > 50000 && tarif <= 100000)
+    *diskon = 0.05f;
+  else
+    *diskon = 0.0f;
+}
 
 int main() {
   float diskon, km, tarif, potongan;
   printf("Jarak(km) : ");
-  scanf("%f", &km);
+  if (scanf("%f", &km) != 1) return 1;
 
   printf("Jarak tempuh pelanggan : %.0f Km\n", km);
 
-  tarif = hitung_tarif(km);
+  hitung_tarif(km, &tarif);
   printf("Biaya sebelum diskon : Rp %.0f\n", tarif);
 
-  diskon = hitung_diskon(tarif);
-  if (diskon > 0.0) {
+  hitung_diskon(tarif, &diskon);
+  if (diskon > 0.0f) {
     printf("Diskon : %.0f%%\n", diskon * 100);
     potongan = tarif * diskon;
     tarif = tarif - potongan;
@@ -25,25 +40,4 @@ int main() {
 
   printf("Total biaya yang harus dibayar : Rp%.0f\n", tarif);
   return 0;
-}
-
-float hitung_tarif(float km) {
-  float tarif;
-  if (km <= 5)
-    tarif = 5000 * km;
-  else if (km > 5 && km <= 10)
-    tarif = 25000 + (4000 * (km-5));
-  else
-    tarif = 45000 + (3000 * (km-10));
-
-  return tarif;
-}
-
-float hitung_diskon(float tarif) {
-  if (tarif > 100000)
-    return 0.10;
-  else if (tarif > 50000 && tarif <= 100000)
-    return 0.05;
-  else
-    return 0;
 }
