@@ -26,32 +26,85 @@ Repositori ini berisi dokumentasi lengkap perjalanan pembelajaran saya dalam mat
 
 ---
 
-## 🚀 Cara Penggunaan
+## � Struktur Repositori
+
+```
+algoritma_pemrograman/
+├── Afolder/               # Latihan perhitungan dan looping
+│   ├── hitungNilaiAkhir.c # Program hitung nilai akhir mahasiswa
+│   ├── karyawan.c         # Program data karyawan
+│   ├── looping.c          # Latihan looping
+│   └── main.c             # Program utama
+│
+├── basic/                 # Konsep dasar pemrograman C
+│   ├── array.c            # Implementasi array
+│   ├── array1D.c          # Array 1 dimensi
+│   ├── array2D.c          # Array 2 dimensi
+│   ├── bonusMingguan.c    # Perhitungan bonus mingguan
+│   ├── factorial.c        # Algoritma faktorial
+│   ├── function.c         # Implementasi fungsi
+│   ├── functionA.c        # Contoh fungsi A
+│   ├── luasRuang.c        # Perhitungan luas ruang
+│   ├── nomorEmpat.c       # Latihan nomor 4
+│   ├── nomorTiga.c        # Latihan nomor 3
+│   ├── passingArray.c     # Passing array ke fungsi
+│   ├── pointer.c          # Konsep pointer
+│   └── totalBarang.c      # Perhitungan total barang
+│
+├── branching/             # Percabangan dan kondisi
+│   ├── ceritaGrosir.c     # Program cerita grosir
+│   ├── diskonPulsa.c      # Perhitungan diskon pulsa
+│   ├── informasiMahasiswa.c # Data informasi mahasiswa
+│   ├── informasiPribadi.c   # Data informasi pribadi
+│   ├── kalkulatorSederhana.c # Kalkulator sederhana
+│   ├── KTPSIM.c           # Program KTP/SIM
+│   ├── latihan4.c         # Latihan 4
+│   ├── parking.c          # Sistem parkir
+│   ├── pemesananWisata.c  # Pemesanan wisata
+│   ├── shopping.c         # Program shopping
+│   └── sorting.c          # Algoritma sorting
+│
+├── looping/               # Perulangan
+│   ├── peringatanBanjir.c # Program peringatan banjir
+│   ├── persegi.c          # Pola persegi
+│   ├── segitiga.c         # Pola segitiga
+│   └── segitigaTerbalik.c # Pola segitiga terbalik
+│
+└── tugas/                 # Tugas kuliah
+    ├── arrayStar.c        # Program array bintang
+    └── FreshDay.c         # Program Fresh Day
+```
+
+---
+
+## �🚀 Cara Penggunaan
 
 ### Prasyarat
 Pastikan Anda telah menginstal:
-- **GCC Compiler** (GNU Compiler Collection)
+- **Clang Compiler** (LLVM Compiler)
 - **IDE/Text Editor** (VS Code, Code::Blocks, Dev-C++, atau lainnya)
 
 ### Instalasi Compiler
 
 #### Windows
 ```bash
-# Menggunakan MinGW atau TDM-GCC
-# Download dari: https://www.mingw-w64.org/
+# Download LLVM/Clang dari: https://releases.llvm.org/
+# Atau gunakan package manager seperti Chocolatey
+choco install llvm
 ```
 
 #### Linux (Ubuntu/Debian)
 ```bash
 sudo apt update
-sudo apt install build-essential
-gcc --version
+sudo apt install clang
+clang --version
 ```
 
 #### macOS
 ```bash
-# Menggunakan Xcode Command Line Tools
+# Clang sudah terinstall bersama Xcode Command Line Tools
 xcode-select --install
+clang --version
 ```
 
 ### Menjalankan Program
@@ -62,9 +115,9 @@ xcode-select --install
    cd C
    ```
 
-2. **Kompilasi program**
+2. **Kompilasi program dengan Clang**
    ```bash
-   gcc nama-file.c -o output
+   clang nama-file.c -o output
    ```
 
 3. **Jalankan program**
@@ -78,8 +131,17 @@ xcode-select --install
 
 ### Contoh
 ```bash
-gcc 01-Dasar-Dasar/hello-world.c -o hello
-./hello
+# Kompilasi program dari folder basic
+clang basic/array.c -o array
+./array
+
+# Kompilasi program dari folder branching
+clang branching/kalkulatorSederhana.c -o kalkulator
+./kalkulator
+
+# Kompilasi program dari folder looping
+clang looping/persegi.c -o persegi
+./persegi
 ```
 
 ---
@@ -115,7 +177,7 @@ gcc 01-Dasar-Dasar/hello-world.c -o hello
 ## 🛠️ Tools & Resources
 
 ### Development Tools
-- **Compiler:** GCC (GNU Compiler Collection)
+- **Compiler:** Clang (LLVM Compiler Infrastructure)
 - **IDE:** Visual Studio Code dengan ekstensi C/C++
 - **Version Control:** Git & GitHub
 
