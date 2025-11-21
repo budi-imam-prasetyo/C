@@ -6,6 +6,6 @@
 !index.md
 !index.html
 !_config.yml
-Afolder/
+.Afolder/
 .vscode/
 .cache/
