@@ -4,6 +4,8 @@
 !README.md
 !.gitignore
 !index.md
+!index.html
 !_config.yml
 Afolder/
 .vscode/
+.cache/
