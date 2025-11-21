@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositori Kuliah Bahasa Pemrograman C - Budi Imam Prasetyo</title>
+    <meta name="description"
+        content="Koleksi lengkap materi, praktikum, dan proyek Bahasa Pemrograman C oleh Budi Imam Prasetyo. Temukan kode sumber, latihan, dan tugas kuliah di sini.">
+    <meta name="keywords"
+        content="Bahasa C, Pemrograman C, Kuliah Algoritma, Struktur Data, Budi Imam Prasetyo, Source Code C, Belajar C, Portfolio Programming">
+    <meta name="author" content="Budi Imam Prasetyo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://github.com/budi-imam-prasetyo/C">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/budi-imam-prasetyo/C">
+    <meta property="og:title" content="Repositori Kuliah Bahasa Pemrograman C - Budi Imam Prasetyo">
+    <meta property="og:description"
+        content="Koleksi lengkap materi, praktikum, dan proyek Bahasa Pemrograman C. Mulai perjalanan belajar coding Anda di sini.">
+    <meta property="og:image"
+        content="https://img.freepik.com/premium-photo/linux-terminal-background-coding-colorful_168058-715.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/budi-imam-prasetyo/C">
+    <meta property="twitter:title" content="Repositori Kuliah Bahasa Pemrograman C - Budi Imam Prasetyo">
+    <meta property="twitter:description"
+        content="Koleksi lengkap materi, praktikum, dan proyek Bahasa Pemrograman C. Mulai perjalanan belajar coding Anda di sini.">
+    <meta property="twitter:image"
+        content="https://img.freepik.com/premium-photo/linux-terminal-background-coding-colorful_168058-715.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Repositori Kuliah Bahasa Pemrograman C",
+      "url": "https://github.com/budi-imam-prasetyo/C",
+      "author": {
+        "@type": "Person",
+        "name": "Budi Imam Prasetyo",
+        "url": "https://github.com/budi-imam-prasetyo"
+      },
+      "description": "Koleksi lengkap materi, praktikum, dan proyek Bahasa Pemrograman C."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -28,19 +71,24 @@
             background-color: #0f172a;
             color: #f8fafc;
         }
+
         .glass-card {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .gradient-text {
             background: linear-gradient(to right, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .card-hover {
             transition: all 0.3s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
@@ -48,18 +96,26 @@
         }
     </style>
 </head>
+
 <body class="antialiased min-h-screen flex flex-col">
 
     <!-- Hero Section -->
     <header class="relative overflow-hidden py-20 sm:py-32">
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[100px] -z-10"></div>
-        
+        <!-- <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] "></div> -->
+        <div
+            class="absolute inset-0 bg-[url('https://img.freepik.com/premium-photo/linux-terminal-background-coding-colorful_168058-715.jpg')] bg-cover bg-center opacity-20">
+        </div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[100px] -z-10">
+        </div>
+
         <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-blue-200 mb-6">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-blue-200 mb-6">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                 </span>
                 Active Learning Journey
             </div>
@@ -71,10 +127,12 @@
                 Didokumentasikan oleh <span class="text-white font-medium">Budi Imam Prasetyo</span>.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#content" class="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/25">
+                <a href="#content"
+                    class="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/25">
                     Mulai Jelajahi
                 </a>
-                <a href="https://github.com/budi-imam-prasetyo" target="_blank" class="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-medium transition-colors backdrop-blur-sm">
+                <a href="https://github.com/budi-imam-prasetyo" target="_blank"
+                    class="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-medium transition-colors backdrop-blur-sm">
                     GitHub Profile
                 </a>
             </div>
@@ -83,18 +141,18 @@
 
     <!-- Main Content -->
     <main id="content" class="container mx-auto px-4 py-12 flex-grow">
-        
+
         <!-- Stats/Info Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            <div class="glass-card p-6 rounded-2xl text-center">
+            <div class="glass-card p-6 rounded-2xl text-center select-none">
                 <div class="text-4xl font-bold text-white mb-2">C</div>
                 <div class="text-slate-400">Language</div>
             </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
+            <div class="glass-card p-6 rounded-2xl text-center select-none">
                 <div class="text-4xl font-bold text-white mb-2">Active</div>
                 <div class="text-slate-400">Status</div>
             </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
+            <div class="glass-card p-6 rounded-2xl text-center select-none">
                 <div class="text-4xl font-bold text-white mb-2">MIT</div>
                 <div class="text-slate-400">License</div>
             </div>
@@ -108,20 +166,31 @@
 
         <!-- Folder Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
+
             <!-- Basic -->
             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/basic/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Basic</h3>
-                    <p class="text-slate-400 text-sm mb-4">Konsep dasar pemrograman C, array, fungsi, dan algoritma sederhana.</p>
+                    <p class="text-slate-400 text-sm mb-4">Konsep dasar pemrograman C, array, fungsi, dan algoritma
+                        sederhana.</p>
                     <div class="flex items-center text-blue-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
@@ -130,15 +199,27 @@
             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/branching/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Branching</h3>
-                    <p class="text-slate-400 text-sm mb-4">Percabangan dan logika kondisi (if-else, switch case) dalam berbagai studi kasus.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                        Branching</h3>
+                    <p class="text-slate-400 text-sm mb-4">Percabangan dan logika kondisi (if-else, switch case) dalam
+                        berbagai studi kasus.</p>
                     <div class="flex items-center text-purple-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
@@ -147,15 +228,27 @@
             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/looping/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Looping</h3>
-                    <p class="text-slate-400 text-sm mb-4">Implementasi perulangan untuk membuat pola dan algoritma iteratif.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Looping
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-4">Implementasi perulangan untuk membuat pola dan algoritma
+                        iteratif.</p>
                     <div class="flex items-center text-emerald-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
@@ -164,15 +257,27 @@
             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/structure/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Structure</h3>
-                    <p class="text-slate-400 text-sm mb-4">Penggunaan Struct untuk data kompleks dan manajemen memori.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Structure
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-4">Penggunaan Struct untuk data kompleks dan manajemen memori.
+                    </p>
                     <div class="flex items-center text-amber-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
@@ -181,32 +286,53 @@
             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/tugas/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-4 text-rose-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-4 text-rose-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">Tugas</h3>
                     <p class="text-slate-400 text-sm mb-4">Kumpulan tugas kuliah dan proyek-proyek kecil.</p>
                     <div class="flex items-center text-rose-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
 
-             <!-- Afolder -->
-             <a href="https://github.com/budi-imam-prasetyo/C/tree/master/function/" class="group block">
+            <!-- Function -->
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/function/" class="group block">
                 <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Function</h3>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Function
+                    </h3>
                     <p class="text-slate-400 text-sm mb-4">Latihan perhitungan, looping, dan program dasar lainnya.</p>
                     <div class="flex items-center text-cyan-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </div>
                 </div>
             </a>
@@ -223,13 +349,12 @@
                     &copy; 2025 Budi Imam Prasetyo. All rights reserved.
                 </div>
                 <div class="flex gap-6">
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">About</a>
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Contact</a>
-                    <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Privacy</a>
+                    Iki Footer Yoo Mas
                 </div>
             </div>
         </div>
     </footer>
 
 </body>
+
 </html>
