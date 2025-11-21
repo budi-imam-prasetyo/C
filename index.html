@@ -48,290 +48,496 @@
     }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#3b82f6',
-                        secondary: '#8b5cf6',
-                        dark: '#0f172a',
-                        card: '#1e293b',
-                    }
-                }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
             }
         }
-    </script>
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-        }
 
+        /* Modern glassmorphism card */
         .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
 
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        /* Gradient text */
         .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
         }
 
+        /* Card hover effects */
         .card-hover {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .card-hover:hover::before {
+            opacity: 1;
         }
 
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
-            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* Floating animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Stagger animation delays */
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        /* Glow effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5),
+                0 0 40px rgba(118, 75, 162, 0.3),
+                0 0 60px rgba(240, 147, 251, 0.2);
+        }
+
+        /* Bento grid specific styles */
+        .bento-tall {
+            grid-row: span 2;
+        }
+
+        .bento-wide {
+            grid-column: span 2;
+        }
+
+        /* Icon gradient backgrounds */
+        .icon-gradient-blue {
+            background: linear-gradient(135deg, #667eea 0%, #4facfe 100%);
+        }
+
+        .icon-gradient-purple {
+            background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+        }
+
+        .icon-gradient-green {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+        }
+
+        .icon-gradient-orange {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .icon-gradient-pink {
+            background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+        }
+
+        .icon-gradient-cyan {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
     </style>
 </head>
 
-<body class="antialiased min-h-screen flex flex-col">
+<body class="antialiased min-h-screen">
 
     <!-- Hero Section -->
-    <header class="relative overflow-hidden py-20 sm:py-32">
-        <!-- <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] "></div> -->
+    <header class="relative overflow-hidden py-24 sm:py-32">
+        <!-- Animated gradient orbs -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl float-animation"
+            style="animation-delay: 2s;"></div>
         <div
-            class="absolute inset-0 bg-[url('https://img.freepik.com/premium-photo/linux-terminal-background-coding-colorful_168058-715.jpg')] bg-cover bg-center opacity-20">
-        </div>
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[100px] -z-10">
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/20 rounded-full blur-3xl">
         </div>
 
         <div class="container mx-auto px-4 text-center relative z-10">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-blue-200 mb-6">
-                <span class="relative flex h-2 w-2">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm mb-8 fade-in-up">
+                <span class="relative flex h-3 w-3">
                     <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                 </span>
-                Active Learning Journey
+                <span
+                    class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent font-semibold">Active
+                    Learning Journey</span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                <span class="gradient-text">Algoritma & Pemrograman</span>
+
+            <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tight fade-in-up delay-100">
+                <span class="gradient-text">Algoritma &</span><br>
+                <span class="gradient-text">Pemrograman</span>
             </h1>
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Koleksi lengkap materi, praktikum, dan proyek Bahasa Pemrograman C.
-                Didokumentasikan oleh <span class="text-white font-medium">Budi Imam Prasetyo</span>.
+
+            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed fade-in-up delay-200">
+                Koleksi lengkap materi, praktikum, dan proyek <span class="font-bold text-white">Bahasa Pemrograman
+                    C</span>.<br>
+                Didokumentasikan oleh <span
+                    class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-bold">Budi
+                    Imam Prasetyo</span>
             </p>
-            <div class="flex justify-center gap-4">
+
+            <div class="flex flex-wrap justify-center gap-4 fade-in-up delay-300">
                 <a href="#content"
-                    class="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-colors shadow-lg shadow-blue-500/25">
-                    Mulai Jelajahi
+                    class="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-2xl font-bold transition-all shadow-lg hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105">
+                    <span class="flex items-center gap-2">
+                        Mulai Jelajahi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </span>
                 </a>
                 <a href="https://github.com/budi-imam-prasetyo" target="_blank"
-                    class="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-medium transition-colors backdrop-blur-sm">
-                    GitHub Profile
+                    class="px-8 py-4 glass-card hover:glass-card text-white rounded-2xl font-bold transition-all hover:scale-105">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        GitHub Profile
+                    </span>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main id="content" class="container mx-auto px-4 py-12 flex-grow">
+    <main id="content" class="container mx-auto px-4 py-16 relative z-10">
 
-        <!-- Stats/Info Grid -->
+        <!-- Stats Section with Modern Design -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            <div class="glass-card p-6 rounded-2xl text-center select-none">
-                <div class="text-4xl font-bold text-white mb-2">C</div>
-                <div class="text-slate-400">Language</div>
+            <div class="glass-card p-8 rounded-3xl text-center select-none card-hover fade-in-up delay-100">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl icon-gradient-blue flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <div class="text-5xl font-black text-white mb-2">C</div>
+                <div class="text-slate-400 font-medium">Programming Language</div>
             </div>
-            <div class="glass-card p-6 rounded-2xl text-center select-none">
-                <div class="text-4xl font-bold text-white mb-2">Active</div>
-                <div class="text-slate-400">Status</div>
+
+            <div class="glass-card p-8 rounded-3xl text-center select-none card-hover fade-in-up delay-200">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl icon-gradient-green flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <div
+                    class="text-5xl font-black bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    Active</div>
+                <div class="text-slate-400 font-medium">Development Status</div>
             </div>
-            <div class="glass-card p-6 rounded-2xl text-center select-none">
-                <div class="text-4xl font-bold text-white mb-2">MIT</div>
-                <div class="text-slate-400">License</div>
+
+            <div class="glass-card p-8 rounded-3xl text-center select-none card-hover fade-in-up delay-300">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl icon-gradient-purple flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <div class="text-5xl font-black text-white mb-2">MIT</div>
+                <div class="text-slate-400 font-medium">Open Source License</div>
             </div>
         </div>
 
         <!-- Section Title -->
-        <div class="flex items-center gap-4 mb-10">
-            <h2 class="text-3xl font-bold text-white">Materi Pembelajaran</h2>
-            <div class="h-px bg-slate-700 flex-grow"></div>
+        <div class="flex items-center gap-6 mb-12 fade-in-up delay-400">
+            <h2
+                class="text-4xl md:text-5xl font-black bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                Materi Pembelajaran</h2>
+            <div class="h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-transparent flex-grow rounded-full"></div>
         </div>
 
-        <!-- Folder Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
 
             <!-- Basic -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/basic/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/basic/"
+                class="group block fade-in-up delay-100">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-blue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Basic</h3>
-                    <p class="text-slate-400 text-sm mb-4">Konsep dasar pemrograman C, array, fungsi, dan algoritma
-                        sederhana.</p>
-                    <div class="flex items-center text-blue-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Basic
+                    </h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Konsep dasar pemrograman C, array, fungsi, dan
+                        algoritma sederhana.</p>
+
+                    <div class="flex items-center text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
             </a>
 
             <!-- Branching -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/branching/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/branching/"
+                class="group block fade-in-up delay-200">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-purple flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                         Branching</h3>
-                    <p class="text-slate-400 text-sm mb-4">Percabangan dan logika kondisi (if-else, switch case) dalam
-                        berbagai studi kasus.</p>
-                    <div class="flex items-center text-purple-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    <p class="text-slate-400 mb-6 leading-relaxed">Percabangan dan logika kondisi (if-else, switch case)
+                        dalam berbagai studi kasus.</p>
+
+                    <div class="flex items-center text-purple-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
             </a>
 
             <!-- Looping -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/looping/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/looping/"
+                class="group block fade-in-up delay-300">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-green flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Looping
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Looping
                     </h3>
-                    <p class="text-slate-400 text-sm mb-4">Implementasi perulangan untuk membuat pola dan algoritma
-                        iteratif.</p>
-                    <div class="flex items-center text-emerald-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    <p class="text-slate-400 mb-6 leading-relaxed">Implementasi perulangan untuk membuat pola dan
+                        algoritma iteratif.</p>
+
+                    <div class="flex items-center text-cyan-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
             </a>
 
             <!-- Structure -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/structure/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/structure/"
+                class="group block fade-in-up delay-400">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-orange flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">Structure
-                    </h3>
-                    <p class="text-slate-400 text-sm mb-4">Penggunaan Struct untuk data kompleks dan manajemen memori.
-                    </p>
-                    <div class="flex items-center text-amber-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">
+                        Structure</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Penggunaan Struct untuk data kompleks dan manajemen
+                        memori.</p>
+
+                    <div class="flex items-center text-orange-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
             </a>
 
             <!-- Tugas -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/tugas/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/tugas/"
+                class="group block fade-in-up delay-500">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-4 text-rose-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-pink flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">Tugas</h3>
-                    <p class="text-slate-400 text-sm mb-4">Kumpulan tugas kuliah dan proyek-proyek kecil.</p>
-                    <div class="flex items-center text-rose-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">Tugas
+                    </h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Kumpulan tugas kuliah dan proyek-proyek kecil.</p>
+
+                    <div class="flex items-center text-pink-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
             </a>
 
             <!-- Function -->
-            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/function/" class="group block">
-                <div class="glass-card rounded-2xl p-6 h-full card-hover relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                        </svg>
-                    </div>
+            <a href="https://github.com/budi-imam-prasetyo/C/tree/master/function/"
+                class="group block fade-in-up delay-600">
+                <div class="glass-card rounded-3xl p-8 h-full card-hover relative overflow-hidden">
                     <div
-                        class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all">
+                    </div>
+
+                    <div
+                        class="w-14 h-14 rounded-2xl icon-gradient-cyan flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Function
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">Function
                     </h3>
-                    <p class="text-slate-400 text-sm mb-4">Latihan perhitungan, looping, dan program dasar lainnya.</p>
-                    <div class="flex items-center text-cyan-400 text-sm font-medium">
-                        Lihat Materi <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    <p class="text-slate-400 mb-6 leading-relaxed">Latihan perhitungan, looping, dan program dasar
+                        lainnya.</p>
+
+                    <div class="flex items-center text-teal-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                        Lihat Materi
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>
                 </div>
@@ -342,14 +548,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/20 backdrop-blur-sm mt-auto">
-        <div class="container mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <footer class="relative mt-20 border-t border-white/10 glass-card backdrop-blur-xl">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-slate-400 text-sm">
-                    &copy; 2025 Budi Imam Prasetyo. All rights reserved.
+                    <p class="font-semibold text-white mb-2">© 2025 Budi Imam Prasetyo</p>
+                    <p>All rights reserved. Made with ❤️ and ☕</p>
                 </div>
-                <div class="flex gap-6">
-                    Iki Footer Yoo Mas
+                <div class="flex gap-6 items-center">
+                    <a href="https://github.com/budi-imam-prasetyo" target="_blank"
+                        class="text-slate-400 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <span class="text-slate-500">•</span>
+                    <span class="text-slate-400 font-medium">Iki Footer Yoo Mas</span>
                 </div>
             </div>
         </div>
