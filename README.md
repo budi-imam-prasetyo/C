@@ -155,11 +155,18 @@ clang looping/persegi.c -o persegi
 - [x] Fungsi dan parameter
 - [x] Array dan string
 - [x] Pointer dan memory management
-- [ ] Struktur data (struct, union, enum)
+- [x] Struktur data (struct, union, enum)
 - [ ] File I/O operations
 - [ ] Preprocessing directives
 - [ ] Dynamic memory allocation
 - [ ] Linked list dan struktur data lanjutan
+
+---
+
+## Sorting
+
+- [x] Bubble Sort
+- [x] Insertion Sort
 
 ---
 

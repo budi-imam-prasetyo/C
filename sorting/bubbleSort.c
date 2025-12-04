@@ -10,7 +10,9 @@ void bubbleSort(int arr[], int n) {
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
                 printf("-> %d, %d\n", arr[j], arr[j + 1]);
-            }else{
+            }
+            else
+            {
                 printf("-> %d, %d *\n", arr[j], arr[j + 1]);
             }
         }
@@ -25,9 +27,9 @@ int main(){
     //     printf("%d ", arr[i]);
     // printf("\n");
     bubbleSort(arr, n);
-    // printf("Sorted array: \n");
-    // for (int i=0; i < n; i++)
-    //     printf("%d ", arr[i]);
-    // printf("\n");
+    printf("Sorted array: \n");
+    for (int i=0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
     return 0;
 }
